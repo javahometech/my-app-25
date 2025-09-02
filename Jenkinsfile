@@ -14,7 +14,7 @@ pipeline{
         branch 'develop'
       }
      steps{
-      
+      echo "Building app"
      }
     }
     stage("Dev Deploy"){
