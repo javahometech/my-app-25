@@ -38,6 +38,9 @@ jobs:
       - name: Fail if Quality Gate Fails
         uses: sonarsource/sonarqube-quality-gate-action@v1
         timeout-minutes: 5
+        with:
+          scanMetadataReportFile: target/sonar/report-task.txt
+          pollingTimeoutSec: 600
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
